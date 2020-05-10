@@ -125,7 +125,6 @@ img {
 }
 
 .search input {
-    color: lightgray;
     float: left;
     height: 100%;
     width: 80%;
@@ -181,7 +180,7 @@ img {
 
 .chat-info p:last-child {
     color: gray;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .float-right {
@@ -189,8 +188,77 @@ img {
 }
 
 .chat-container {
+    overflow-y: scroll;
     width: 100%;
     height: calc(100% - 100px);
     background-image: url('img/wallpaper.jpg');
     background-size: contain;
+    display: inline-flex;
+}
+
+.overflow {
+    height: calc(100% - 135px);
+    overflow-y: scroll;
+}
+
+.chat-wrapper {
+    width: 80%;
+    height: 85%;
+    margin: auto;
+}
+
+.messaggio-in-arrivo {
+    background-color: white;
+}
+
+.messaggio-in-uscita {
+    background-color: LightGreen;
+}
+
+.messaggio-in-arrivo,
+.messaggio-in-uscita {
+    padding: 12px 7px;
+    max-width: 150px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 10px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message-arrivo-wrapper {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.message-uscita-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.invia-messaggio {
+    height: 50px;
+    background-color: Gainsboro;
+    padding: 10px;
+}
+
+.emoticons,
+.microphone {
+    float: left;
+    width: 80px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+}
+
+.invia-messaggio input {
+    padding: 5px;
+    float: left;
+    height: 100%;
+    width: calc(100% - 160px);
+    border: 0;
+    border-radius: 2px;
 }
