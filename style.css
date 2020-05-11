@@ -228,11 +228,13 @@ img {
 }
 
 .message-arrivo-wrapper {
+    padding: 5px 0;
     display: flex;
     justify-content: flex-start;
 }
 
 .message-uscita-wrapper {
+    padding: 5px 0;
     display: flex;
     justify-content: flex-end;
 }
