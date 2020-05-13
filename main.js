@@ -13,7 +13,7 @@ $('.fa-microphone').click(function() {
     }, 1000);
 })
 
-//ricerca utente per nome completo (non key sensitive)
+//ricerca utente dinamica (non key sensitive)
 
 $('.search-contact').keyup(function() {
     if($('.search-contact').val()){
