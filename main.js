@@ -13,29 +13,22 @@ $('.fa-microphone').click(function() {
     }, 1000);
 })
 
-//reset dei contatti visibili
-
-$('.search-contact').focus(function () {
-    if ($('.search-contact').val()) {
-        $('.user-chat').each(function() {
-            $(this).show();
-        })
-    }
-})
-
 //ricerca utente per nome completo (non key sensitive)
 
-$('.search-icon').click(function() {
+$('.search-contact').keyup(function() {
     if($('.search-contact').val()){
         var testo_utente = $('.search-contact').val().toLowerCase();
         $('.user-chat').each(function() {
             var testo_info = $(this).find('.user-info p:first-of-type').text().toLowerCase();
-            if (testo_info != testo_utente) {
-                $(this).hide();
-            }
-            else {
+            if (testo_info.includes(testo_utente)) {
                 $(this).show();
             }
+            else {
+                $(this).hide();
+            }
         })
+    }
+    else {
+        $('.user-chat').show();
     }
 })
