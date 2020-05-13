@@ -4,11 +4,11 @@ $('.fa-microphone').click(function() {
     var testo_inserito = $('.write').val();
     $('.write').val('');
     var nuovo_messaggio = $('.template .message-uscita-wrapper').clone();
-    $('.chat-wrapper').append(nuovo_messaggio);
+    $('.chat-wrapper.active').append(nuovo_messaggio);
     $('.message-uscita-wrapper:last-of-type p').text(testo_inserito);
     setTimeout(function(){
         var nuovo_messaggio_arrivo = $('.template .message-arrivo-wrapper').clone();
-        $('.chat-wrapper').append(nuovo_messaggio_arrivo);
+        $('.chat-wrapper.active').append(nuovo_messaggio_arrivo);
         $('.message-arrivo-wrapper:last-of-type p').text('ok');
     }, 1000);
 })
@@ -31,4 +31,22 @@ $('.search-contact').keyup(function() {
     else {
         $('.user-chat').show();
     }
+})
+
+$('.user-chat').click(function() {
+    var indice_contatto = $(this).index();
+    $('.chat-container').find('.active').removeClass('active');
+    $('.chat-wrapper').eq(indice_contatto).toggleClass('active');
+    var nome_contatto = $(this).find('.user-info p:first-of-type').text();
+    $('.chat-info p:first-of-type').text(nome_contatto);
+})
+
+$('.active .messaggio-in-uscita').click(function () {
+    var tendina = $('.template .tendina').clone();
+    $(this).append(tendina);
+    $('.tendina p').text('cancella messaggio');
+})
+
+$('.tendina p').click(function () {
+    $('.active .messaggio-in-uscita').hide();
 })
