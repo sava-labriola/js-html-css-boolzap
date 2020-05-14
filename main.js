@@ -1,6 +1,8 @@
-// invio messaggio e risposta dopo un secondo
+//milestone 1
 
-$('.fa-microphone').click(function() {
+//invio messaggio e risposta dopo un secondo
+
+$('.microphone').click(function() {
     var testo_inserito = $('.write').val();
     $('.write').val('');
     var nuovo_messaggio = $('.template .message-uscita-wrapper').clone();
@@ -12,6 +14,8 @@ $('.fa-microphone').click(function() {
         $('.message-arrivo-wrapper:last-of-type p').text('ok');
     }, 1000);
 })
+
+//milestone 2
 
 //ricerca utente dinamica (non key sensitive)
 
@@ -33,6 +37,10 @@ $('.search-contact').keyup(function() {
     }
 })
 
+//milestone 3
+
+//cambio chat dei contatti tramite indice
+
 $('.user-chat').click(function() {
     var indice_contatto = $(this).index();
     $('.chat-container').find('.active').removeClass('active');
@@ -41,12 +49,14 @@ $('.user-chat').click(function() {
     $('.chat-info p:first-of-type').text(nome_contatto);
 })
 
-$('.active .messaggio-in-uscita').click(function () {
+//eliminare un messaggio selezionato
+
+$(document).on('click', '.active .messaggio-in-uscita', function () {
     var tendina = $('.template .tendina').clone();
     $(this).append(tendina);
-    $('.tendina p').text('cancella messaggio');
+    $(this).next().text('cancella messaggio');
 })
 
-$('.tendina p').click(function () {
-    $('.active .messaggio-in-uscita').hide();
+$(document).on('click', '.tendina p', function () {
+    $(this).closest('.message-uscita-wrapper').remove();
 })

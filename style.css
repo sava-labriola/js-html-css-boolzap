@@ -285,6 +285,7 @@ img {
 }
 
 .tendina {
+    z-index: 1;
     padding: 10px;
     background-color: white;
     border-radius: 2px;
@@ -292,6 +293,10 @@ img {
     top: 30px;
     font-family: 'Roboto', sans-serif;
 
+}
+
+.tendina:hover {
+    background-color: Gainsboro;
 }
 
 @media screen and (max-width: 1200px) {
