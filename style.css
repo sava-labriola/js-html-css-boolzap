@@ -97,7 +97,6 @@ img {
 
 .text {
     padding: 5px;
-    float: left;
     font-size: 12px;
     font-family: 'Roboto', sans-serif;
 }
@@ -138,9 +137,9 @@ img {
 }
 
 .user-info {
-    float: left;
-    margin-left: 15px;
+    padding-left: 10px;
     height: 100%;
+    display: inline-block;
     max-width: 200px;
 }
 
