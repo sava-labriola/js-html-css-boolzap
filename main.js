@@ -41,10 +41,23 @@ $('.search-contact').keyup(function() {
 
 //cambio chat dei contatti tramite indice
 
-$('.user-chat').click(function() {
-    var indice_contatto = $(this).index();
+// $('.user-chat').click(function() {
+//     var indice_contatto = $(this).index();
+//     $('.chat-container').find('.active').removeClass('active');
+//     $('.chat-wrapper').eq(indice_contatto).toggleClass('active');
+//     var nome_contatto = $(this).find('.user-info p:first-of-type').text();
+//     $('.chat-info p:first-of-type').text(nome_contatto);
+// })
+
+//cambio chat dei contatti tramite data
+
+$('.user-chat').click(function () {
+    $('.user-chat').removeClass('active');
+    $(this).addClass('active');
+    var data_chat = $(this).attr('data-chat');
+    console.log(data_chat);
     $('.chat-container').find('.active').removeClass('active');
-    $('.chat-wrapper').eq(indice_contatto).toggleClass('active');
+    $('.chat-wrapper[data-chat="'+ data_chat +'"]').toggleClass('active');
     var nome_contatto = $(this).find('.user-info p:first-of-type').text();
     $('.chat-info p:first-of-type').text(nome_contatto);
 })

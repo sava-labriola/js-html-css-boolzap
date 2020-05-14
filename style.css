@@ -280,6 +280,10 @@ img {
     display: none;
 }
 
+.user-chat.active {
+    background: Gainsboro;
+}
+
 .chat-wrapper.active {
     display: inline-block;
 }
