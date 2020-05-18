@@ -6,6 +6,7 @@
         <script src="https://kit.fontawesome.com/bd6bc08428.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
         <title>Boolzap</title>
     </head>
     <body>
@@ -156,7 +157,27 @@
                 </div>
             </div>
         </div>
-        <div class="template">
+
+        <!-- template con Handlebars -->
+
+        <script id="sent" type="text/x-handlebars-template">
+            <div class="message-uscita-wrapper">
+                <div class="messaggio-in-uscita">
+                    <p>{{ messaggio }}</p>
+                </div>
+            </div>
+        </script>
+        <script id="received" type="text/x-handlebars-template">
+            <div class="message-arrivo-wrapper">
+                <div class="messaggio-in-arrivo">
+                    <p>{{ messaggio }}</p>
+                </div>
+            </div>
+        </script>
+
+        <!-- template standard -->
+
+        <!-- <div class="template">
             <div class="message-uscita-wrapper">
                 <div class="messaggio-in-uscita">
                     <p></p>
@@ -169,7 +190,8 @@
                     <p></p>
                 </div>
             </div>
-        </div>
+        </div> -->
+        
         <div class="template">
             <div class="tendina">
                 <p>Cancella messaggio</p>
